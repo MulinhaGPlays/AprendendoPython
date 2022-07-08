@@ -5,7 +5,7 @@ from django.contrib.messages import constants
 def password_is_valid(request, password, confirm_password):
     if len(password) < 6:
         messages.add_message(request, constants.ERROR, 'Sua senha deve conter 6 ou mais caractertes')
-    return False    
+        return False    
     if not password == confirm_password:
         messages.add_message(request, constants.ERROR, 'As senhas não coincidem!')
         return False    
@@ -18,4 +18,4 @@ def password_is_valid(request, password, confirm_password):
     if not re.search('[1-9]', password):
         messages.add_message(request, constants.ERROR, 'Sua senha não contém números')
         return False
-        return True
+    return True

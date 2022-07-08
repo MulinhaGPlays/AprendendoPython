@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .utils import passoword_is_valid
+from .utils import password_is_valid
 from django.contrib.auth.models import User
 
 def cadastro(request):
@@ -25,7 +25,6 @@ def cadastro(request):
             return redirect('/auth/logar')
         except:
             return redirect('/auth/cadastro')
-        
         
 
 def logar(request):
